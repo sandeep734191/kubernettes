@@ -1,0 +1,49 @@
+Pod:(layer of abstraction of container)
+1. smallest unit of k8s
+2.abstraction over container
+3.usually 1 application per pod
+4.each pod gets its own ip address
+5. new ip address on recreation
+
+Service:
+(attached to application)
+1.permanent ip address(even application gets recreated there is no problem as we are connected with service)
+2.lifecycle of pod and service not connected (even if pod dies ip remains)
+
+Ingress:
+1.initially request goes to ingress and then service
+
+ConfigMap:
+
+1.external configuration of your application(like endpoints ex:db url)
+2. But here we should not store passwords so secret comes.
+
+Secret
+1.used to store secretes
+2.stores in base64 format
+
+-> Deployment for stateless apps
+-> statefulset for statefull apps or databases
+
+->k8s cluster:
+ these 3 process are required to function properly
+  1.kubelet
+  2.kube proxy
+  3.container runtime
+  
+->Master nodes/process manages start/stop/monitor/schedule pods
+->master process contains 
+    1.Api server(outside request comes here ->validate request->other process->pods)
+    2.Scheduler(scheduler just decides on which node new pod should be scheduled)
+    3.Controller Manager(detects cluster state change i.e when cluster dies it will restart another)
+    4.etcd(cluster changes get stored in the key value store which is etcd)
+    
+terminology:
+master nodes-> worker nodes(worker nodes will have multiple pods)
+
+Minikube:(1node k8s cluster)
+its a 1 node cluster where master processes and worker processes runs on one machine
+
+->Kubectl command tool is used to interact with apiserver in master process
+
+
