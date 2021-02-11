@@ -1,18 +1,28 @@
-kubectl get nodes
-kubectl get pod
-kubectl get services
+-----> kubectl get nodes
+-----> kubectl get pod
+-----> kubectl get services
 
 note: cannot interact with pod directly so a abstraction is present over it which is deployment
 
-kubectl create deployment <name> --image=<imageName>
+-----> kubectl create deployment <name> --image=<imageName>
 
 ex:kubectl create deloyment nginx-deployment --image=nginx
 
-kubectl get deployment -> will show above created nginx-deloyment
-kubectl get pod -> now shows nginx-deployment container
+----> kubectl get deployment -> will show above created nginx-deloyment
+----> kubectl get pod -> now shows nginx-deployment container
 
 Between deployment and pod there is replica set which manages the replicas of pod
 
-kubectl get replicaset -> ex:nginx-deployment-<id of replicaset>-<id of pod>
+----> kubectl get replicaset -> ex:nginx-deployment-<id of replicaset>-<id of pod>
+
+Layers of abstraction:
+
+DEPLOYMENT manages a REPLICASET manages a POD is an abstraction of CONTAINER
+
+Everything below deployment is automatically managed by kubernettes
+
+-----> kubectl edit deployment <name of deploment>
+
+
 
 
