@@ -1,0 +1,13 @@
+Every configuration file contains three parts
+ 1.metaData
+ 2.specification
+ 3.status
+ 
+ STATUS is automatically generated and added by kubernettes.Kubernettes will always compare desired state and actual state and it will generate status.
+ 
+ Desired state is present in SPECIFICATION part in configuration file
+ Actual state is present in ETCD (etcd holds the current status of anyk8s components). so kubernettes gets actual state from etcd.
+ 
+ (Yaml validator online tool for giving perfect indentation to configuration file)
+ 
+ The TEMPLATE section inside configuration file is for pod. Blue print for pod deloyment.
