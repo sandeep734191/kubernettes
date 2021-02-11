@@ -23,6 +23,22 @@ Everything below deployment is automatically managed by kubernettes
 
 -----> kubectl edit deployment <name of deploment>
 
+------> kubectl logs <name of pod>
+
+------> kubectl describe pod <pod name> ->gives some additional information
+
+------> kubectl exec -it <pod name> --bin/bash -> which gives terminal of that pod container and through which we can get additional info
+
+------>kubectl delete deloyment <name of deployment> --deleted deployment and its...
+
+We can create so much additional information while creating deployment in the form of options i.e 
+ kubectl create deloyment <name> --image=<image name> option1 option2 .....
+ 
+ Instead of this we can use configuration files in practical
+ 
+ ---> kubectl apply -f config-file.yaml
+ 
+ with kubectl apply we can create and update deployment as well.
 
 
 
